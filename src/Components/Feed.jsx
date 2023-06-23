@@ -3,16 +3,20 @@ import React, { useEffect,useState } from 'react'
 import SideBar from './SideBar'
 import { FetchFromApi } from '../Utils/FetchFromApi'
 import Videos from './Videos'
+import LoadingSkeleton from './LoadingSkeleton'
 
 
 const Feed = ({mode}) => {
    let [videos, setVideos] = useState([]);
    let [selectedType, setselectedType] = useState("New");
+   let [loading,setLoading] = useState(true);
+   
    useEffect(() => {
-    FetchFromApi(`search?part=snippet&q=${selectedType}`).then((data) => {setVideos(data.items)});
+     
+    FetchFromApi(`search?part=snippet&q=${selectedType}`).then((data) => {setVideos(data.items); setLoading(false)});
     
    }, [selectedType])
-
+   
   return ( 
     <Stack sx={{flexDirection:{sm: "column", md: "row"}}}>
         <Box sx={{padding: {sm: 0, md: 2}, borderRight: "1px solid #3d3d3d"}}>
@@ -25,7 +29,9 @@ const Feed = ({mode}) => {
            {selectedType}<span> Videos</span>
            
           </Typography>
-          <Videos feed={videos} direction={"row"} spacing={{xs:"center", md:"flex-start"}} mode={mode}></Videos>
+                 {loading && <LoadingSkeleton ></LoadingSkeleton>}   
+          
+          <Videos feed={videos} direction={"row"} spacing={{xs:"center", md:"flex-start"}} mode={mode} loading={loading}></Videos>
         
          
         </Box>

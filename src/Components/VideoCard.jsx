@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Skeleton, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle } from "@mui/icons-material";
@@ -7,11 +7,15 @@ const VideoCard = ({
   video: {
     id: { videoId },
     snippet,
-  },
+  },loading
 }) => {
- 
+
+  
   return (
+    
+    
     <Card sx={{ width: { xs: "330px", md:"300px" }, marginTop:"5px" }}>
+      
       <Link to={videoId && `/video/${videoId}`}>
         <CardMedia
           image={snippet?.thumbnails?.medium?.url}
@@ -37,6 +41,7 @@ const VideoCard = ({
         </Link>
       </CardContent>
     </Card>
+    
   );
 };
 

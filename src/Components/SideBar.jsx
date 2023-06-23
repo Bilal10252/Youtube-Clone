@@ -1,12 +1,13 @@
 import { Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 import { Categories } from "../Utils/Categories";
+import { Height } from "@mui/icons-material";
 
 const SideBar = ({ selectedType, choosenType }) => {
   return (
     <Stack
       direction={"row"}
-      sx={{ overflowY: "auto", flexDirection: { md: "column" } }}
+      sx={{ overflowY: "auto", flexDirection: { md: "column" } , height:{xs:"auto", md:"83vh"}}}
     >
       {Categories.map((category) => (
         <button

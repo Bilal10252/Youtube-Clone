@@ -19,7 +19,8 @@ const Navbar = ({ toggle, mode }) => {
         justifyContent: "space-between",
         padding: {xs:1, md:2},
         zIndex: "3",
-        gap:1
+        gap:1,
+        
       }}
       backgroundColor={mode ? "white" : "black"}
     >

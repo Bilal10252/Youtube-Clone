@@ -11,7 +11,7 @@ const Videos = ({ direction, feed, spacing, mode }) => {
     
       {feed.map((feed, idx) => (
         <Box key={idx}>
-            {feed.id.videoId && <VideoCard video={feed}></VideoCard>}
+            {feed.id.videoId && <VideoCard video={feed} ></VideoCard>}
             {feed.id.channelId && <ChannelCard channel={feed} mode={mode}></ChannelCard>}
         </Box>
     ))}

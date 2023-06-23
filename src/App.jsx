@@ -32,7 +32,7 @@ function App() {
             mode={mode}
           ></Navbar>
           <Routes>
-            <Route path=""  element={<Feed mode={mode}/>}></Route>
+            <Route path=""  element={<Feed mode={mode}/> }></Route>
             <Route
               path="/video/:id"
               element={<VideoDetail ></VideoDetail>}

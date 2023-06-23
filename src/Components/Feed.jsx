@@ -29,7 +29,7 @@ const Feed = ({mode}) => {
            {selectedType}<span> Videos</span>
            
           </Typography>
-                 {loading && <LoadingSkeleton ></LoadingSkeleton>}   
+                 {loading && <LoadingSkeleton spacing={{xs:"center", md:"flex-start"}}></LoadingSkeleton>}   
           
           <Videos feed={videos} direction={"row"} spacing={{xs:"center", md:"flex-start"}} mode={mode} loading={loading}></Videos>
         

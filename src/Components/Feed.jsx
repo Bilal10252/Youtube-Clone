@@ -20,7 +20,7 @@ const Feed = ({mode}) => {
   return ( 
     <Stack sx={{flexDirection:{sm: "column", md: "row"}}}>
         <Box sx={{padding: {sm: 0, md: 2}, borderRight: "1px solid #3d3d3d"}}>
-          <SideBar selectedType={(selectedType) => setselectedType(selectedType)} choosenType={selecqtedType}></SideBar>
+          <SideBar selectedType={(selectedType) => setselectedType(selectedType)} choosenType={selectedType}></SideBar>
           <Typography className='copyright' variant='body2' sx={{mt: 1.5}}>COPYRIGHT&copy;2023</Typography>
         </Box>
 

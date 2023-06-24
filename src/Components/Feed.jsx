@@ -20,7 +20,7 @@ const Feed = ({mode}) => {
   return ( 
     <Stack sx={{flexDirection:{sm: "column", md: "row"}}}>
         <Box sx={{padding: {sm: 0, md: 2}, borderRight: "1px solid #3d3d3d"}}>
-          <SideBar selectedType={(selectedType) => setselectedType(selectedType)} choosenType={selectedType}></SideBar>
+          <SideBar selectedType={(selectedType) => setselectedType(selectedType)} choosenType={selecqtedType}></SideBar>
           <Typography className='copyright' variant='body2' sx={{mt: 1.5}}>COPYRIGHT&copy;2023</Typography>
         </Box>
 
@@ -29,7 +29,7 @@ const Feed = ({mode}) => {
            {selectedType}<span> Videos</span>
            
           </Typography>
-                 {loading && <LoadingSkeleton spacing={{xs:"center", md:"flex-start"}}></LoadingSkeleton>}   
+                 {loading && <LoadingSkeleton ></LoadingSkeleton>}   
           
           <Videos feed={videos} direction={"row"} spacing={{xs:"center", md:"flex-start"}} mode={mode} loading={loading}></Videos>
         

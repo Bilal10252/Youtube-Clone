@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { FetchFromApi } from "../Utils/FetchFromApi";
 import { CheckCircle } from "@mui/icons-material";
 import Videos from "./Videos";
+import SuggestedVideosDetail from "./SuggestedVideoDetail";
 
 const VideoDetail = () => {
   let { id } = useParams();
@@ -59,7 +60,7 @@ const VideoDetail = () => {
       </Box>
        
 
-      <Stack  sx={{display:"flex",  alignItems:"center", justifyContent:"center"}}>{<Videos feed={suggestedVideos} direction={"column"} ></Videos>}</Stack>
+      <Stack  sx={{display:"flex",  alignItems:"center", justifyContent:"center"}}>{<SuggestedVideosDetail relatedVideos={suggestedVideos} direction={"column"} ></SuggestedVideosDetail>}</Stack>
       
     </Stack>
   );

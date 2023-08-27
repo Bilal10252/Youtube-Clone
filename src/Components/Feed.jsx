@@ -14,7 +14,7 @@ const Feed = ({mode}) => {
    useEffect(() => {
      
     FetchFromApi(`search?part=snippet&q=${selectedType}`).then((data) => {setVideos(data.items); setLoading(false)});
-    
+     
    }, [selectedType])
    
   return ( 

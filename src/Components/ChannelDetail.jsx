@@ -20,7 +20,6 @@ const ChannelDetail = () => {
       );
     });
   }, [id]);
-  console.log(vid);
   return (
     <>
       <Box>

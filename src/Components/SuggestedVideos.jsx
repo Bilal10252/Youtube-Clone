@@ -3,13 +3,19 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle } from "@mui/icons-material";
 
-const VideoCard = ({
-  video: {
+const SuggestedVideos = ({
+    video: {
     id: { videoId },
     snippet,
   },loading
 }) => {
   
+  
+  let [url,setUrl] = useState("");
+  
+  useEffect(() => {    
+      setUrl(snippet?.thumbnails?.default?.url.replace("https =>", "https:")); 
+  },[])
 
   
   return (
@@ -19,12 +25,18 @@ const VideoCard = ({
       
       <Link to={videoId && `/video/${videoId}`}>
         <CardMedia
-       
+        // Debugged the url problem created by the api
 
-          image={snippet?.thumbnails?.medium?.url}
+          // image={snippet?.thumbnails?.default?.url}
+          // https =>//i.ytimg.com/vi/XIOoqJyx8E4/default.jpg
+          // https://i.ytimg.com/vi/vTekSbandv8/default_live.jpg
+
+          
+
+          image={url}
           sx={{ width: "100%", height: 180 }}
           alt={snippet?.title}
-          // component='img'
+          component='img'
         ></CardMedia>
       </Link>
       <CardContent
@@ -49,4 +61,4 @@ const VideoCard = ({
   );
 };
 
-export default VideoCard;
+export default SuggestedVideos;

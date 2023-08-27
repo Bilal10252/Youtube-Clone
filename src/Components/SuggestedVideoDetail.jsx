@@ -6,7 +6,6 @@ import SuggestedVideos from "./SuggestedVideos";
 
 const SuggestedVideosDetail = ({ relatedVideos, direction, spacing, mode }) => {
 
-    console.log(relatedVideos);
   return <>
 
     <Stack direction={direction} flexWrap={"wrap"} gap={2} justifyContent={spacing}>
